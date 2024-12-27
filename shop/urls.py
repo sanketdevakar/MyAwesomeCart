@@ -12,3 +12,4 @@ urlpatterns = [
     path("product/",views.ProductList, name = "ProductItems")
 
 ]
+

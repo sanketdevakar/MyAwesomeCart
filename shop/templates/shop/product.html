@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends 'shop/basic.html' %}
 
+{% block title%} Products list {% endblock %}
+
+{% block body %} 
     {% for prd in product %}
 
 
@@ -15,6 +16,4 @@
 
 
     {% endfor %}
-
-</body>
-</html>
+{% endblock %}

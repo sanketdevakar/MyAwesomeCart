@@ -9,7 +9,6 @@ urlpatterns = [
     path("tracker/", views.tracker, name="TrackingStatus"),
     path("productview/", views.productView, name="ProductView"),
     path("checkout/", views.checkout, name="Checkout"),
-    path("product/",views.ProductList, name = "ProductItems")
 
 ]
 

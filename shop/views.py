@@ -28,19 +28,19 @@ def index(request):
     return render(request, 'shop/index.html', params)
 
 def about(request):
-    return HttpResponse("We are at about")
+    return render(request, 'shop/about.html')
 
 def contact(request):
-    return HttpResponse("We are at Contact")
+    return render(request, 'shop/contact.html')
 
 def tracker(request):
-    return HttpResponse("We are at tracker")
+    return render(request, 'shop/tracker.html')
 
 def search(request):
-    return HttpResponse("We are at search")
+    return render(request, 'shop/search.html')
 
 def productView(request):
-    return HttpResponse("We are at product view")
+    return render(request, 'shop/prodView.html')
 
 def checkout(request):
-    return HttpResponse("We are at Checkout")
+    return render(request, 'shop/checkout.html')

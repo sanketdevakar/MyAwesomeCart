@@ -33,24 +33,12 @@
           .carousel-control-next{
           top: auto;
           bottom: auto;
+          padding-top : 222px;
           }
            body .no-padding{
            padding-left: 0,
            padding-right: 0;
            }
-
-           .carousel-item {
-            position: relative;
-            display: none;
-            float: left;
-            width: 108%;
-            margin-right: -100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            transition: -webkit-transform .6s ease-in-out;
-            transition: transform .6s ease-in-out;
-            transition: transform .6s ease-in-out,-webkit-transform .6s ease-in-out;
-        }
  {% endblock %}
 
 {% block body %}
@@ -60,6 +48,7 @@
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
     <h5 class="my-4">Flash Sale On {{product.0.category}} - Recommended Items</h5>
+    <div class="row">
 <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
     <ul class="carousel-indicators">
       <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
@@ -102,6 +91,7 @@
     <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
         <span class="carousel-control-next-icon"></span>
     </a>
+  </div>
     {% endfor %}
 </div>
  {% endblock %}
@@ -131,6 +121,9 @@
   }
   console.log(cart);
   localStorage.setItem('cart', JSON.stringify(cart));
+  document.getElementById('cart').innerHTML = Object.keys(cart).length;
   });
+  $('#popcart').popover();
+  document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
  </script>
  {% endblock%}

@@ -20,10 +20,6 @@ def index(request):
         n = len(prod)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         allProds.append([prod, range(1, nSlides), nSlides])
-
-    # params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'product': products}
-    # allProds = [[products, range(1, nSlides), nSlides],
-    #             [products, range(1, nSlides), nSlides]]
     params = {'allProds':allProds}
     return render(request, 'shop/index.html', params)
 
@@ -39,8 +35,12 @@ def tracker(request):
 def search(request):
     return render(request, 'shop/search.html')
 
-def productView(request):
-    return render(request, 'shop/prodView.html')
+def productView(request, myid):
+    # Fetch the product using the id
+    product = Product.objects.filter(id=myid)
+
+    return render(request, 'shop/prodView.html', {'product':product[0]})
+    
 
 def checkout(request):
     return render(request, 'shop/checkout.html')

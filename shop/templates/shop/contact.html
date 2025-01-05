@@ -25,3 +25,14 @@
   <button type="submit" class="btn btn-success">Submit</button>
 
   {% endblock %}
+
+{%block js%}
+
+  <script>
+  {% if thank %}
+  alert('Thanks for contacting us. We wil get back to you soon!');
+  document.location = "/shop/";
+  {%endif%}
+  </script>
+
+{% endblock %}

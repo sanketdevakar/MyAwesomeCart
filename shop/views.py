@@ -23,6 +23,7 @@ def about(request):
     return render(request, 'shop/about.html')
 
 def contact(request):
+    thank = False
     if request.method=="POST":
         print(request)
         name=request.POST.get('name', '')
@@ -30,8 +31,9 @@ def contact(request):
         phone=request.POST.get('phone', '')
         desc=request.POST.get('desc', '')
         contact = Contact(name=name, email=email, phone=phone, desc=desc)
+        thank = True
         contact.save()
-    return render(request, "shop/contact.html")
+    return render(request, "shop/contact.html", {'thank': thank})
 
 def checkout(request):
     if request.method=="POST":
@@ -63,7 +65,7 @@ def tracker(request):
                 updates = []
                 for item in update:
                     updates.append({'text': item.update_desc, 'time': item.timestamp})
-                    response = json.dumps(updates, default=str)
+                    response = json.dumps([updates, order[0].items_json], default=str)
                 return HttpResponse(response)
             else:
                 return HttpResponse('{}')

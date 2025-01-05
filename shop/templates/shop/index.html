@@ -16,11 +16,11 @@
 }
 
 body .carousel-indicator li {
-    background-color: blue;
+    background-color: #7270fc;
 }
 
 body .carousel-indicators {
-    bottom: 0;
+    bottom: -40px;
 }
 
 body .carousel-control-prev-icon,
@@ -63,14 +63,15 @@ body .no-padding {
                 <div class="carousel-item active">
                     {% for i in product %}
                     <div class="col-xs-3 col-sm-3 col-md-3">
-                        <div class="card align-items-center" style="width: 18rem;">
+                        <div class="card  align-items-center" style="width: 18rem;">
                             <img src='/media/{{i.image}}' class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
+                                <h6 class="card-title" id="namepr{{i.id}}">{{i.product_name|slice:"0:23"}}...</h6>
                                 <p class="card-text">{{i.desc|slice:"0:53"}}...</p>
+                                <h6 class="card-title" >Price : <span id="pricepr{{i.id}}">{{i.price}}</span></h6>
                                 <span id="divpr{{i.id}}" class="divpr">
-                <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
-            </span>
+                                    <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
+                                </span>
                                 <a href="/shop/products/{{i.id}}"><button id="qv{{i.id}}" class="btn btn-primary cart">Quick View</button></a>
                             </div>
                         </div>
@@ -78,7 +79,8 @@ body .no-padding {
                     {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
                 </div>
                 <div class="carousel-item">
-                    {% endif %} {% endfor %}
+                    {% endif %} 
+                    {% endfor %}
                 </div>
 
 
@@ -115,7 +117,8 @@ body .no-padding {
           } else {
             qty = 1;
             name = document.getElementById('name' + idstr).innerHTML
-            cart[idstr] = [qty, name];
+            price = document.getElementById('price' + idstr).innerHTML
+            cart[idstr] = [qty, name, parseInt(price)];
 
           }
           updateCart(cart);

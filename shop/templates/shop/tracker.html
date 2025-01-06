@@ -1,5 +1,7 @@
 {% extends 'shop/basic.html' %}
-{% block title%} My Awesome Cart Tracker{% endblock %}
+
+{% block title%} My Awesome Cart Tracker {% endblock %}
+
 {% block body %}
 <div class="container">
     <div class="col my-4">
@@ -21,18 +23,22 @@
         <h2>Your Order Status</h2>
         <div class="my-4">
             <ul class="list-group" id="items">
-            	
+            	Enter your order Id and Email and click Track Order to find details about your status!
             </ul>
         </div>
     </div>
-    <h2>Your Order Details </h2>
+    <div class="col my-4">
+        <h2> Your Order Details </h2>
         <div class="my-4">
             <ul class="list-group" id="citems">
                 Enter your order Id and Email and click Track Order to find details about your order!
             </ul>
         </div>
+    </div>
 </div>
 {% endblock %}
+
+
 {% block js %}
 <script>
 $('#trackerForm').submit(function(event) {

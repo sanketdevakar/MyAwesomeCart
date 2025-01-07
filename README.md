@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-**MyAwesome** "My Awesome Cart" is an e-commerce platform designed to provide users with an easy-to-use online shopping experience. The platform will offer a wide variety of products, allowing customers to browse, add to cart, and complete their purchases securely and efficiently.
+"My Awesome Cart" is an e-commerce platform designed to provide users with an easy-to-use online shopping experience. The platform will offer a wide variety of products, allowing customers to browse, add to cart, and complete their purchases securely and efficiently.
 The platform will be built using Django for the backend, which will handle business logic, database management, and server-side operations. HTML, CSS, and JavaScript will be used for the frontend to create a responsive, interactive, and user-friendly interface.
 
 ## Technologies Used

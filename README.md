@@ -1,6 +1,6 @@
 # Project Name: **MyAwesomeCart**
 
-<img width="1822" alt="Screenshot 2024-11-07 at 12 35 23 PM" src="C:\Users\Sanket\Downloads\website.png">
+<img width="1822" alt="Screenshot 2024-11-07 at 12 35 23 PM" src="https://github.com/user-attachments/assets/ed3a02ea-89d5-44cc-bb37-674ba4ea03e5">
 
 ## Table of Contents!
 
